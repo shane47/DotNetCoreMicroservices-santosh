@@ -35,14 +35,14 @@ namespace Orders.Application.Features.Commands.CheckoutOrder
 
             var email = new Email() { To = "ezozkme@gmail.com", Body = $"Order was created.", Subject = "Order was created" };
 
-            try
-            {
-                await emailService.SendMailAsync(email);
-            }
-            catch (Exception ex)
-            {
-                logger.LogError($"Order {request.OrderDto.Id} failed due to an error with the mail service: {ex.Message}");
-            }
+            //try
+            //{
+            //    // await emailService.SendMailAsync(email);
+            //}
+            //catch (Exception ex)
+            //{
+            //    logger.LogError($"Order {request.OrderDto.Id} failed due to an error with the mail service: {ex.Message}");
+            //}
 
             return newOrder.Id;
         }
